@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <select name="city" id="city">
+      <option value="">도시선택</option>
+      <option value="seoul">서울</option>
+      <option value="busan">부산</option>
+    </select>
+    <p id="result">
+      <!-- js출력 -->
+    </p>
+    <script>
+      const city = document.querySelector("#city");
+      const result = document.querySelector("#result");
+      //   select에 바꾸는 건 change라는 이벤트를 사용.
+      city.addEventListener("change", function () {
+        result.textContent = `${city.value}`;
+      });
+    </script>
+  </body>
+</html>
