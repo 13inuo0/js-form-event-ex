@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" id="username" placeholder="이름을 입력해주세요" />
+    <p id="message">
+      <!-- js출력 -->
+    </p>
+    <script>
+      // foucus : 입력창을 클릭했을때
+      // blur : 입력창에서 나왔을 때
+      const userName = document.querySelector("#username");
+      const message = document.querySelector("#message");
+      userName.addEventListener("focus", function () {
+        message.textContent = "이름을 입력해주세요.🧵";
+        message.style.color = "blue";
+        message.style.backgroundColor = "green";
+      });
+      userName.addEventListener("blur", function () {
+        if (userName.value.trim() === "") {
+          message.textContent = "이름 작성은 필수입니다.ಠ_ಠ";
+          message.style.color = "red";
+          message.style.backgroundColor = "red";
+        } else {
+          message.textContent = "";
+        }
+      });
+    </script>
+  </body>
+</html>
